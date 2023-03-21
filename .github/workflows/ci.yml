@@ -33,7 +33,7 @@ jobs:
         
     - name: Install dependencies
       run: npm install
-      working-directory: CRM/frontend/crm-project
+      working-directory: '/home/runner/work/CRM/frontend/crm-project'
 
     - name: Run tests
       run: npm run test:headless
