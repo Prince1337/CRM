@@ -23,4 +23,5 @@ jobs:
     - name: Build and test backend
       run: |
         cd backend
+        chmod +x ./gradlew
         ./gradlew clean build
