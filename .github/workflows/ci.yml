@@ -22,9 +22,9 @@ jobs:
       
     - name: Build and test backend
       run: |
-        cd backend
         chmod +x ./gradlew
         ./gradlew clean build
+      working-directory: ./backend
         
     - name: Setup Node.js
       uses: actions/setup-node@v2
@@ -33,7 +33,7 @@ jobs:
         
     - name: Install dependencies
       run: npm install
-      working-directory: ./frontend
+      working-directory: CRM/frontend/crm-project
 
     - name: Run tests
       run: npm run test:headless
