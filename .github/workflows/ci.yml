@@ -32,16 +32,19 @@ jobs:
         node-version: '16'
         
     - name: Install dependencies
-      run: npm install
-      working-directory: '/home/runner/work/CRM/frontend/crm-project'
+      run: |
+        cd frontend/crm-project
+        npm install
 
     - name: Run tests
-      run: npm run test:headless
-      working-directory: ./frontend
+      run: |
+        cd frontend/crm-project
+        npm run test:headless
 
     - name: Build
-      run: npm run build:prod
-      working-directory: ./frontend
+      run: |
+        cd frontend/crm-project
+        npm run build:prod
 
     - name: Build and start containers
       run: |
