@@ -39,12 +39,12 @@ jobs:
     - name: Run tests
       run: |
         cd frontend/crm-project
-        npm run test:headless
+        npm test
 
     - name: Build
       run: |
         cd frontend/crm-project
-        npm run build:prod
+        npm build
 
     - name: Build and start containers
       run: |
