@@ -26,12 +26,19 @@ jobs:
         chmod +x ./gradlew
         ./gradlew clean build
         
-    - name: Build and test frontend
-      run: |
-        cd frontend
-        npm install
-        npm run build
-        npm run test
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm run test:headless
+
+    - name: Build
+      run: npm run build:prod
 
     - name: Build and start containers
       run: |
