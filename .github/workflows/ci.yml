@@ -24,7 +24,7 @@ jobs:
       run: |
         chmod +x ./gradlew
         ./gradlew clean build
-        .gradlew test
+        ./gradlew test
       working-directory: ./backend
         
     - name: Setup Node.js
