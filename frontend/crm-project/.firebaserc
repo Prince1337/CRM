@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "myapp-e6346"
+  },
+  "targets": {
+    "myapp-e6346": {
+      "hosting": {
+        "crm-project": [
+          "myapp-e6346"
+        ]
+      }
+    }
   }
 }
