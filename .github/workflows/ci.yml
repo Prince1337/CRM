@@ -44,7 +44,7 @@ jobs:
     - name: Build
       run: |
         cd frontend/crm-project
-        npm build
+        npm run build
 
     - name: Build and start containers
       run: |
