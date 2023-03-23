@@ -1,6 +1,8 @@
 {
   "hosting": [
     {
+      "target": "e6346",
+      "site": "myapp-e6346",
       "public": "public",
       "ignore": [
         "firebase.json",
