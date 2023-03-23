@@ -20,3 +20,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYAPP_E6346 }}'
           channelId: live
           projectId: myapp-e6346
+          entryPoint: 'frontend/crm-project'
