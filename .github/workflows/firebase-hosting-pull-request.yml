@@ -11,7 +11,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies and build
         run: |
-          cd frontend/crm-project
           npm ci
           npm run build
         working-directory: ./frontend/crm-project
@@ -20,3 +19,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYAPP_E6346 }}'
           projectId: myapp-e6346
+          entryPoint: 'frontend/crm-project'

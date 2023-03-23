@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "site": "myapp-e6346",
+      "target":"crm-project",
       "public": "public",
       "ignore": [
         "firebase.json",
