@@ -1,25 +1,35 @@
 name: Deploy to Firebase
+
 on:
   push:
     branches:
-      - main # oder der Name deiner Haupt-Branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: npm install
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
 
-    - name: Build the Angular app
-      run: npm run build
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
 
-    - name: Deploy to Firebase
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting --project=Myapp # Ersetze my-firebase-project mit dem Namen deines Firebase-Projekts
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Authenticate with Firebase
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: firebase login:ci --token "$FIREBASE_TOKEN"
+
+      - name: Build and deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          cd frontend/crm-project
+          ng build --prod
+          firebase deploy --only hosting --token "$FIREBASE_TOKEN"
