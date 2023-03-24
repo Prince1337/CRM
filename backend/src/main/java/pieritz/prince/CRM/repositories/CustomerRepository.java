@@ -1,10 +1,15 @@
-package Customer.Relationship.Manager.CRM.repositories;
+package pieritz.prince.CRM.repositories;
 
-import Customer.Relationship.Manager.CRM.domain.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import org.springframework.stereotype.Repository;
+import pieritz.prince.CRM.domain.Customer;
+
+import java.util.List;
 
 @RepositoryRestResource
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
+
+    List<Customer> findByLastName(String lastName);
+
+    Customer getCustomerBy(Long id);
 }

@@ -1,4 +1,4 @@
-package Customer.Relationship.Manager.CRM.domain;
+package pieritz.prince.CRM.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
