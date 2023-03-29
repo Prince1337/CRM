@@ -13,18 +13,18 @@ public class ContactController {
         this.contactService = contactService;
     }
 
-    @PostMapping("")
+    @PostMapping("/create")
     @ResponseBody
     public Contact createContact(@RequestBody Contact contact) {
         return contactService.createContact(contact);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public Contact updateContact(@RequestBody Contact contact) {
         return contactService.updateContact(contact);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public boolean deleteContact(@PathVariable Long id) {
         return contactService.deleteContact(id);
     }

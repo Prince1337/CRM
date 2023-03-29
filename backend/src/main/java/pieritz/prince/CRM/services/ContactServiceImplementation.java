@@ -1,5 +1,6 @@
 package pieritz.prince.CRM.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pieritz.prince.CRM.domain.Contact;
 import pieritz.prince.CRM.domain.Customer;
@@ -14,6 +15,7 @@ public class ContactServiceImplementation implements ContactService {
 
     private final ContactRepository contactRepository;
 
+    @Autowired
     public ContactServiceImplementation(ContactRepository contactRepository) {
         this.contactRepository = contactRepository;
     }
