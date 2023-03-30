@@ -47,7 +47,7 @@ public class CustomerControllerTest {
 
         String customerJson = objectMapper.writeValueAsString(customer);
 
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/customers")
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/customers/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(customerJson))
                 .andReturn();
@@ -80,7 +80,7 @@ public class CustomerControllerTest {
 
         String updatedCustomerJson = objectMapper.writeValueAsString(updatedCustomer);
 
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/customers/1")
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/customers/update/1")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(updatedCustomerJson))
                 .andReturn();
@@ -92,7 +92,7 @@ public class CustomerControllerTest {
 
     @Test
     public void deleteCustomerTest() throws Exception {
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.delete("/customers/1"))
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.delete("/customers/delete/1"))
                 .andReturn();
 
         verify(customerService).deleteCustomer(1L);
