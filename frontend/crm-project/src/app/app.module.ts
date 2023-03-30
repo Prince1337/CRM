@@ -7,7 +7,11 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { firebaseConfig } from 'src/environments/environment';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { DashboardComponent } from './dashboard/dashboard.component'
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddCustomerComponent } from './customers/add-customer/add-customer.component'
+import { FormsModule } from '@angular/forms';
+import { ListCustomerComponent } from './customers/list-customer/list-customer.component';
+
 
 
 @NgModule({
@@ -15,11 +19,14 @@ import { DashboardComponent } from './dashboard/dashboard.component'
     AppComponent,
     HeaderComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddCustomerComponent,
+    ListCustomerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
