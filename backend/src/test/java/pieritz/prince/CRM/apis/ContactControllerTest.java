@@ -51,7 +51,7 @@ class ContactControllerTest {
 
         String contactJson = objectMapper.writeValueAsString(contact);
 
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/contacts")
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/contacts/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(contactJson))
                 .andReturn();
@@ -84,7 +84,7 @@ class ContactControllerTest {
 
         String updatedCustomerJson = objectMapper.writeValueAsString(updatedContact);
 
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/contacts/1")
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/contacts/update/1")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(updatedCustomerJson))
                 .andReturn();
@@ -96,7 +96,7 @@ class ContactControllerTest {
 
     @Test
     public void deleteCustomerTest() throws Exception {
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.delete("/contacts/1"))
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.delete("/contacts/delete/1"))
                 .andReturn();
 
         verify(contactService).deleteContact(1L);
