@@ -1,0 +1,37 @@
+.container {
+    margin: 20px;
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      margin-bottom: 20px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+      }
+      
+      th {
+        background-color: #eee;
+      }
+      
+      td:last-child {
+        text-align: center;
+        
+        i {
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  

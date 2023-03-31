@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Income vs Expense Comparison Report</h1>
+    <div class="filter">
+      <label>From:</label>
+      <input type="date" [(ngModel)]="startDate">
+      <label>To:</label>
+      <input type="date" [(ngModel)]="endDate">
+      <button (click)="generateReport()">Generate Report</button>
+    </div>
+    <div class="report" *ngIf="reportData">
+      <div class="income">
+        <h2>Income</h2>
+        <p>Total Income: {{ reportData.income.total }}</p>
+        <ul>
+          <li *ngFor="let income of reportData.income.items">
+            {{ income.name }}: {{ income.amount }}
+          </li>
+        </ul>
+      </div>
+      <div class="expense">
+        <h2>Expense</h2>
+        <p>Total Expense: {{ reportData.expense.total }}</p>
+        <ul>
+          <li *ngFor="let expense of reportData.expense.items">
+            {{ expense.name }}: {{ expense.amount }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

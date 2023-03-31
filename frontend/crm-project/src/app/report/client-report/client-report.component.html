@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Client Report</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="client">Select Client:</label>
+        <select id="client" name="client" [(ngModel)]="selectedClient">
+          <option *ngFor="let client of clients" [value]="client.id">{{ client.name }}</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="startDate">Start Date:</label>
+        <input id="startDate" name="startDate" type="date" [(ngModel)]="startDate">
+        <label for="endDate">End Date:</label>
+        <input id="endDate" name="endDate" type="date" [(ngModel)]="endDate">
+        <button class="btn btn-primary" (click)="generateReport()">Generate Report</button>
+      </div>
+    </div>
+    <hr>
+    <div *ngIf="report">
+      <h2>Report for {{ selectedClient.name }}:</h2>
+      <p>Start Date: {{ startDate }}</p>
+      <p>End Date: {{ endDate }}</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Hours Worked</th>
+            <th>Amount Billed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of report">
+            <td>{{ project.name }}</td>
+            <td>{{ project.hours }}</td>
+            <td>{{ project.amount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

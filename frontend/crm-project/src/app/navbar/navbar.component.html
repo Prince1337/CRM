@@ -35,8 +35,8 @@
      <span class="caret"></span>
      </a>
      <ul class="dropdown-menu">
-        <li><a href="rtask.html">Running Task</a></li>
-        <li><a href="atask.html">Archive Task</a></li>
+        <li><a routerLink="tasks/running">Running Tasks</a></li>
+        <li><a routerLink="tasks/archive">Archive Tasks</a></li>
      </ul>
   </li>
   <li class="nav-item dropdown">
@@ -45,8 +45,8 @@
     <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
-       <li><a href="rtask.html">Add Contact</a></li>
-       <li><a href="atask.html">List Contact</a></li>
+       <li><a routerLink="add/contact">Add Contact</a></li>
+       <li><a routerLink="list/contact">List Contact</a></li>
     </ul>
  </li>
   <li class="nav-item dropdown">
@@ -55,9 +55,9 @@
      <span class="caret"></span>
      </a>
      <ul class="dropdown-menu">
-        <li><a href="cpayment.html">Client payment</a></li>
-        <li><a href="emanage.html">Expense management</a></li>
-        <li><a href="ecategory.html">Expense Category</a></li>
+        <li><a routerLink="accounting/client-payment">Client payment</a></li>
+        <li><a routerLink="accounting/expense/management">Expense management</a></li>
+        <li><a routerLink="accounting/expense/category">Expense Category</a></li>
      </ul>
   </li>
   <li class="nav-item dropdown">
@@ -65,10 +65,10 @@
       <i class="fa fa-file-text"></i> Report
     </a>
     <ul class="dropdown-menu" aria-labelledby="reportDropdown">
-      <li><a class="dropdown-item" href="preport.html">Project Report</a></li>
-      <li><a class="dropdown-item" href="creport.html">Client Report</a></li>
-      <li><a class="dropdown-item" href="ereport.html">Expense Report</a></li>
-      <li><a class="dropdown-item" href="incomexp.html">Income expense comparison</a></li>
+      <li><a class="dropdown-item" routerLink="report/project">Project Report</a></li>
+      <li><a class="dropdown-item" routerLink="report/client">Client Report</a></li>
+      <li><a class="dropdown-item" routerLink="report/expense">Expense Report</a></li>
+      <li><a class="dropdown-item" routerLink="report/income-expense-comparison">Income expense comparison</a></li>
     </ul>
   </li>
   
@@ -77,45 +77,45 @@
       <i class="fa fa-gear"></i> Settings
     </a>
     <ul class="dropdown-menu" aria-labelledby="settingsDropdown">
-      <li><a class="dropdown-item" href="gsetting.html">General settings</a></li>
-      <li><a class="dropdown-item" href="stfsetting.html">Staff settings</a></li>
-      <li><a class="dropdown-item" href="emailsetting.html">Email settings</a></li>
-      <li><a class="dropdown-item" href="paysetting.html">Payment</a></li>
+      <li><a class="dropdown-item" routerLink="settings/general">General settings</a></li>
+      <li><a class="dropdown-item" routerLink="settings/staff">Staff settings</a></li>
+      <li><a class="dropdown-item" routerLink="settings/email">Email settings</a></li>
+      <li><a class="dropdown-item" routerLink="settings/payment">Payment</a></li>
     </ul>
   </li>
   
   <li class="nav-item">
-    <a class="nav-link" href="user.html">
+    <a class="nav-link" routerLink="user">
       <i class="fa fa-user-circle"></i> User
     </a>
   </li>
   
   <li class="nav-item">
-    <a class="nav-link" href="document.html">
+    <a class="nav-link" routerLink="documents">
       <i class="fa fa-file-text"></i> Documents
     </a>
   </li>
   
   <li class="nav-item">
-    <a class="nav-link" href="calender.html">
+    <a class="nav-link" routerLink="calendar">
       <i class="fa fa-calendar"></i> Calendar
     </a>
   </li>
   
   <li class="nav-item">
-    <a class="nav-link" href="notice.html">
+    <a class="nav-link" routerLink="notice-board">
       <i class="fa fa-file-text"></i> Notice Board
     </a>
   </li>
   
   <li class="nav-item">
-    <a class="nav-link" href="message.html">
+    <a class="nav-link" routerLink="message">
       <i class="fa fa-envelope"></i> Message
     </a>
   </li>
   
   <li class="nav-item">
-    <a class="nav-link" href="note.html">
+    <a class="nav-link" routerLink="notes">
       <i class="fa fa-comment"></i> Notes
     </a>
   </li>

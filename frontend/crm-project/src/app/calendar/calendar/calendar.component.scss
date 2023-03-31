@@ -1,0 +1,95 @@
+.container {
+    .calendar {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      margin: 0 auto;
+      padding: 10px;
+      font-size: 14px;
+  
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+  
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 18px;
+          color: #666;
+          outline: none;
+        }
+  
+        .current-month {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+  
+      .weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+  
+        .weekday {
+          text-align: center;
+          text-transform: uppercase;
+          color: #666;
+        }
+      }
+  
+      .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 5px;
+  
+        .day {
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          font-weight: bold;
+        }
+  
+        .today {
+          background-color: #007bff;
+          color: #fff;
+        }
+  
+        .selected {
+          background-color: #007bff;
+          color: #fff;
+        }
+  
+        .other-month {
+          opacity: 0.4;
+        }
+  
+        .event {
+          position: relative;
+  
+          &:after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #28a745;
+            bottom: 2px;
+            right: 2px;
+          }
+        }
+      }
+    }
+  }
+  
