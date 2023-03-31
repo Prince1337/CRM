@@ -11,6 +11,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component'
 import { FormsModule } from '@angular/forms';
 import { ListCustomerComponent } from './customers/list-customer/list-customer.component';
+import { InvoicesComponent } from './sales/invoices/invoices.component';
+import { NewInvoicesComponent } from './sales/new-invoices/new-invoices.component';
+import { RecurringInvoicesComponent } from './sales/recurring-invoices/recurring-invoices.component';
+import { NewRecurringInvoicesComponent } from './sales/new-recurring-invoices/new-recurring-invoices.component';
+import { QuotesComponent } from './sales/quotes/quotes.component';
+import { NewQuoteComponent } from './sales/new-quote/new-quote.component';
+import { PaymentsComponent } from './sales/payments/payments.component';
+import { TaxRatesComponent } from './sales/tax-rates/tax-rates.component';
+import { NewTaxRateComponent } from './sales/new-tax-rate/new-tax-rate.component';
 
 
 
@@ -21,7 +30,16 @@ import { ListCustomerComponent } from './customers/list-customer/list-customer.c
     NavbarComponent,
     DashboardComponent,
     AddCustomerComponent,
-    ListCustomerComponent
+    ListCustomerComponent,
+    InvoicesComponent,
+    NewInvoicesComponent,
+    RecurringInvoicesComponent,
+    NewRecurringInvoicesComponent,
+    QuotesComponent,
+    NewQuoteComponent,
+    PaymentsComponent,
+    TaxRatesComponent,
+    NewTaxRateComponent
   ],
   imports: [
     BrowserModule,

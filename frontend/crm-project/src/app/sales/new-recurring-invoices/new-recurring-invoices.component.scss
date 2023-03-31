@@ -1,0 +1,44 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  
+    h1 {
+      margin-bottom: 30px;
+    }
+  
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+  
+      .form-group {
+        margin-bottom: 20px;
+  
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+  
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          margin-top: 5px;
+        }
+      }
+  
+      button[type="submit"] {
+        display: block;
+        margin: 20px auto 0;
+      }
+    }
+  }
+  

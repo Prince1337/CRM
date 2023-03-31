@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>New Invoice</h1>
+    <form #invoiceForm="ngForm" (ngSubmit)="onSubmit(invoiceForm)">
+      <div class="form-group">
+        <label for="customer">Customer:</label>
+        <select class="form-control" id="customer" name="customer" [(ngModel)]="invoice.customer" required>
+          <option *ngFor="let customer of customers" [value]="customer">{{ customer.firstName }} {{ customer.lastName }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="invoiceDate">Invoice Date:</label>
+        <input type="date" class="form-control" id="invoiceDate" name="invoiceDate" [(ngModel)]="invoice.invoiceDate" required>
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Due Date:</label>
+        <input type="date" class="form-control" id="dueDate" name="dueDate" [(ngModel)]="invoice.dueDate" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description" [(ngModel)]="invoice.description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="invoice.amount" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Create Invoice</button>
+    </form>
+  </div>
+  

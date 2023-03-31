@@ -11,7 +11,6 @@
      <ul class="dropdown-menu">
         <li><a routerLink="/add/customer">Add Customer</a></li>
         <li><a routerLink="/list/customer">List</a></li>
-        <li><a href="group.html">Groups</a></li>
      </ul>
   </li>
   <li class="nav-item dropdown">
@@ -20,14 +19,14 @@
      <span class="caret"></span>
      </a>
      <ul class="dropdown-menu">
-        <li><a href="invoice.html">Invoices</a></li>
-        <li><a href="ninvoices.html">New Invoices</a></li>
-        <li><a href="recurring.html">Recurring invoices</a></li>
-        <li><a href="nrecurring.html">New Recurring invoices</a></li>
-        <li><a href="quote.html">quotes</a></li>
-        <li><a href="nquote.html">New quote</a></li>
-        <li><a href="payment.html">Payments</a></li>
-        <li><a href="taxeport.html">Tax Rates</a></li>
+        <li><a routerLink="sales/invoices">Invoices</a></li>
+        <li><a routerLink="sales/invoices/new">New Invoices</a></li>
+        <li><a routerLink="sales/invoices/recurring">Recurring invoices</a></li>
+        <li><a routerLink="sales/invoices/new/recurring">New Recurring invoices</a></li>
+        <li><a routerLink="sales/quotes">quotes</a></li>
+        <li><a routerLink="sales/quotes/new">New quote</a></li>
+        <li><a routerLink="sales/payments">Payments</a></li>
+        <li><a routerLink="sales/taxrates">Tax Rates</a></li>
      </ul>
   </li>
   <li class="nav-item dropdown">
@@ -40,6 +39,16 @@
         <li><a href="atask.html">Archive Task</a></li>
      </ul>
   </li>
+  <li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-book"></i><span>Contact</span>
+    <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+       <li><a href="rtask.html">Add Contact</a></li>
+       <li><a href="atask.html">List Contact</a></li>
+    </ul>
+ </li>
   <li class="nav-item dropdown">
      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
      <i class="fa fa-shopping-bag"></i><span>Accounting</span>

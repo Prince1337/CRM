@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Quotes</h1>
+    <button routerLink="/sales/quotes/new" class="btn btn-primary">New Quote</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Quote Number</th>
+          <th>Customer Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let quote of quotes">
+          <td>{{ quote.number }}</td>
+          <td>{{ quote.customerName }}</td>
+          <td>{{ quote.amount }}</td>
+          <td>{{ quote.date }}</td>
+          <td>
+            <i class="fa fa-edit"></i>
+            <i class="fa fa-trash"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

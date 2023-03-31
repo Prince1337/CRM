@@ -1,0 +1,59 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  
+    h1 {
+      margin-bottom: 20px;
+    }
+  
+    .card {
+      margin-top: 20px;
+  
+      .card-header {
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+  
+        h2 {
+          margin: 0;
+        }
+      }
+  
+      .card-body {
+        padding: 20px;
+  
+        form {
+          .form-group {
+            margin-bottom: 20px;
+  
+            label {
+              font-weight: bold;
+              display: block;
+              margin-bottom: 5px;
+            }
+  
+            input,
+            select {
+              width: 100%;
+              padding: 10px;
+              font-size: 16px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            }
+          }
+  
+          button[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  
