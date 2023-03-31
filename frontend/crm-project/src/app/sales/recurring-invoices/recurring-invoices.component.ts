@@ -4,7 +4,7 @@ import { Customer } from 'src/app/customers/customer';
 @Component({
   selector: 'app-recurring-invoices',
   templateUrl: './recurring-invoices.component.html',
-  styleUrls: ['./recurring-invoices.component.css']
+  styleUrls: ['./recurring-invoices.component.scss']
 })
 export class RecurringInvoicesComponent {
   customers!: Customer[];
