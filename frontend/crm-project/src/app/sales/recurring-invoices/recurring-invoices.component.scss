@@ -9,9 +9,10 @@
   
     .card {
       margin-top: 20px;
+      background-color: #32383d;
   
       .card-header {
-        background-color: #f7f7f7;
+        background-color: #32383d;
         padding: 10px;
         border-bottom: 1px solid #ccc;
   
@@ -46,7 +47,7 @@
           button[type="submit"] {
             background-color: #007bff;
             border: none;
-            color: #fff;
+            color: white;
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 5px;

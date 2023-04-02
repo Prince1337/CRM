@@ -34,14 +34,14 @@
           </button>
         </div>
         <div class="modal-body">
-          <form (submit)="addCategory()">
+          <form (submit)="addCategory()">   
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" [(ngModel)]="newCategory.name" required>
+              <input type="text" class="form-control" id="name" [(ngModel)]="newCategory.name" [ngModelOptions]="{standalone: true}" required>
             </div>
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea class="form-control" id="description" rows="3" [(ngModel)]="newCategory.description" required></textarea>
+              <textarea class="form-control" id="description" rows="3" [(ngModel)]="newCategory.description" [ngModelOptions]="{standalone: true}" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
           </form>
@@ -65,11 +65,11 @@
           <form (submit)="updateCategory()">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" [(ngModel)]="selectedCategory.name" required>
+              <input type="text" class="form-control" id="name" [(ngModel)]="selectedCategory.name" [ngModelOptions]="{standalone: true}" required>
             </div>
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea class="form-control" id="description" rows="3" [(ngModel)]="selectedCategory.description" required></textarea>
+              <textarea class="form-control" id="description" rows="3" [(ngModel)]="selectedCategory.description" [ngModelOptions]="{standalone: true}" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
           </form>

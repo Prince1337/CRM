@@ -24,12 +24,14 @@
   
         &.sent {
           background-color: #DCF8C6;
+          color: black;
         }
   
         &.received {
           background-color: #FFFFFF;
+          color: black;
         }
-  
+
         .message-header {
           display: flex;
           justify-content: space-between;

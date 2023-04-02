@@ -28,7 +28,7 @@ import { RecurringInvoicesComponent } from './sales/recurring-invoices/recurring
 import { TaxRatesComponent } from './sales/tax-rates/tax-rates.component';
 import { EmailSettingsComponent } from './setting/email-settings/email-settings.component';
 import { GeneralSettingsComponent } from './setting/general-settings/general-settings.component';
-import { PaymentsReportComponent } from './setting/payments/payments.component';
+import { PaymentsSettingsComponent } from './setting/payments/payments.component';
 import { StaffSettingsComponent } from './setting/staff-settings/staff-settings.component';
 import { ArchiveTaskComponent } from './task/archive-task/archive-task.component';
 import { RunningTaskComponent } from './task/running-task/running-task.component';
@@ -68,7 +68,7 @@ const routes: Routes = [
   {path: 'settings/general', component: GeneralSettingsComponent},
   {path: 'settings/staff', component: StaffSettingsComponent},
   {path: 'settings/email', component: EmailSettingsComponent},
-  {path: 'settings/payment', component: PaymentsReportComponent},
+  {path: 'settings/payment', component: PaymentsSettingsComponent},
 
   {path: 'user', component: UserComponent},
   {path: 'documents', component: DocumentsComponent},

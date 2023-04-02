@@ -26,7 +26,7 @@ export class NotesComponent {
   };
 
   addNote() {
-    if (this.newNote.title && this.newNote.body) {
+    if (this.newNote.title) {
       this.newNote.date = new Date();
       this.notes.push(this.newNote);
       this.newNote = {

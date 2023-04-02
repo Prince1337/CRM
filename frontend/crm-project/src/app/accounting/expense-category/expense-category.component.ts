@@ -1,39 +1,57 @@
 import { Component } from '@angular/core';
 
+/// <reference types="jquery" />
+
 @Component({
   selector: 'app-expense-category',
   templateUrl: './expense-category.component.html',
   styleUrls: ['./expense-category.component.scss']
 })
 export class ExpenseCategoryComponent {
-  categories = [
-    { name: 'Category 1', description: 'Description 1' },
-    { name: 'Category 2', description: 'Description 2' }
+  categories: Category[] = [
+    { name: 'Food', description: 'Expenses related to food and drinks' },
+    { name: 'Transportation', description: 'Expenses related to transportation' },
+    { name: 'Entertainment', description: 'Expenses related to entertainment activities' }
     ];
     
-    newCategory = { name: '', description: '' };
-    selectedCategory = { name: '', description: '' };
+    newCategory: Category = {
+    name: '',
+    description: ''
+    };
     
-    showAddCategoryModal() {
-    // show add category modal code here
+    selectedCategory: Category = {
+    name: '',
+    description: ''
+    };
+    
+    showAddCategoryModal(): void {
+      // TODO document why this method 'showAddCategoryModal' is empty
     }
     
-    addCategory() {
-    // add category code here
-    this.newCategory = { name: '', description: '' };
+    addCategory(): void {
+    this.categories.push(this.newCategory);
+    this.newCategory = {
+    name: '',
+    description: ''
+    };
     }
     
-    showEditCategoryModal(category: { name: string; description: string; }) {
-    // show edit category modal code here
-    this.selectedCategory = category;
+    showEditCategoryModal(category: Category): void {
+    this.selectedCategory = { ...category };
     }
     
-    updateCategory() {
-    // update category code here
-    this.selectedCategory = { name: '', description: '' };
+    updateCategory(): void {
+    const index = this.categories.findIndex(category => category.name === this.selectedCategory.name);
+    this.categories[index] = { ...this.selectedCategory };
     }
     
-    deleteCategory(category: any) {
-    // delete category code here
+    deleteCategory(category: Category): void {
+    const index = this.categories.findIndex(cat => cat.name === category.name);
+    this.categories.splice(index, 1);
     }
+}
+
+interface Category {
+  name: string;
+  description: string;
 }

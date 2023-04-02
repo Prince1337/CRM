@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './payments.component.html',
   styleUrls: ['./payments.component.scss']
 })
-export class PaymentsReportComponent {
+export class PaymentsSettingsComponent {
 
 }

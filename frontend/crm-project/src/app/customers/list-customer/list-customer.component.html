@@ -23,8 +23,8 @@
         <td>{{ customer.phone }}</td>
         <td>{{ customer.createdAt }}</td>
         <td>
-          <i class="fa fa-edit"></i>
-          <i class="fa fa-trash"></i>
+          <i class="fa fa-edit" (click)="editCustomer(customer)"></i>
+          <i class="fa fa-trash" (click)="deleteCustomer(customer)"></i>
         </td>
       </tr>
     </tbody>

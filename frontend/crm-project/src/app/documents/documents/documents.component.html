@@ -37,11 +37,11 @@
           <form (submit)="addDocument()">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" [(ngModel)]="newDocument.name" required>
+              <input type="text" class="form-control" id="name" [(ngModel)]="newDocument.name" required [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea class="form-control" id="description" rows="3" [(ngModel)]="newDocument.description" required></textarea>
+              <textarea class="form-control" id="description" rows="3" [(ngModel)]="newDocument.description" required [ngModelOptions]="{standalone: true}"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
           </form>
@@ -65,11 +65,11 @@
           <form (submit)="updateDocument()">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" [(ngModel)]="selectedDocument.name" required>
+              <input type="text" class="form-control" id="name" [(ngModel)]="selectedDocument.name" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea class="form-control" id="description" rows="3" [(ngModel)]="selectedDocument.description" required></textarea>
+              <textarea class="form-control" id="description" rows="3" [(ngModel)]="selectedDocument.description" [ngModelOptions]="{standalone: true}"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
           </form>
