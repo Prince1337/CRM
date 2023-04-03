@@ -1,4 +1,4 @@
-import { Contact } from "../contacts/contact";
+import { Contact } from "../contact/contact";
 
 export class Customer {
     firstName!: string;

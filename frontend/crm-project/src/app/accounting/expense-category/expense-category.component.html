@@ -1,0 +1,80 @@
+<div class="container">
+    <h1>Expense Categories</h1>
+    <button (click)="showAddCategoryModal()" class="btn btn-primary">Add Category</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories">
+          <td>{{ category.name }}</td>
+          <td>{{ category.description }}</td>
+          <td>
+            <i class="fa fa-edit" (click)="showEditCategoryModal(category)"></i>
+            <i class="fa fa-trash" (click)="deleteCategory(category)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Add Category Modal -->
+  <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog" aria-labelledby="addCategoryModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addCategoryModalLabel">Add Expense Category</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="addCategory()">   
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="newCategory.name" [ngModelOptions]="{standalone: true}" required>
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" rows="3" [(ngModel)]="newCategory.description" [ngModelOptions]="{standalone: true}" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Edit Category Modal -->
+  <div class="modal fade" id="editCategoryModal" tabindex="-1" role="dialog" aria-labelledby="editCategoryModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editCategoryModalLabel">Edit Expense Category</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="updateCategory()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="selectedCategory.name" [ngModelOptions]="{standalone: true}" required>
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" rows="3" [(ngModel)]="selectedCategory.description" [ngModelOptions]="{standalone: true}" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

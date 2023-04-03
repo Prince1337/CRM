@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Calendar</h1>
+    <div class="calendar">
+      <div class="header">
+        <button (click)="prev()"><i class="fas fa-chevron-left"></i></button>
+        <div class="current-month">{{ currentMonth }}</div>
+        <button (click)="next()"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="weekdays">
+        <div class="weekday" *ngFor="let day of daysOfWeek">{{ day }}</div>
+      </div>
+      <div class="days">
+        <div
+          class="day"
+          *ngFor="let date of dates; let i = index"
+          [ngClass]="{
+            'today': isToday(date),
+            'selected': isSelected(date),
+            'event': hasEvent(date),
+            'other-month': isOtherMonth(date)
+          }"
+          (click)="selectDate(date)"
+        >
+          {{ date.getDate() }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

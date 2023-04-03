@@ -1,0 +1,40 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  button {
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    td i {
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-right: 10px;
+    }
+
+    td i:last-child {
+      margin-right: 0;
+    }
+  }
+}

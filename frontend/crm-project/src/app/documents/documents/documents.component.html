@@ -1,0 +1,80 @@
+<div class="container">
+    <h1>Documents</h1>
+    <button (click)="showAddDocumentModal()" class="btn btn-primary">Add Document</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let document of documents">
+          <td>{{ document.name }}</td>
+          <td>{{ document.description }}</td>
+          <td>
+            <i class="fa fa-edit" (click)="showEditDocumentModal(document)"></i>
+            <i class="fa fa-trash" (click)="deleteDocument(document)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Add Document Modal -->
+  <div class="modal fade" id="addDocumentModal" tabindex="-1" role="dialog" aria-labelledby="addDocumentModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addDocumentModalLabel">Add Document</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="addDocument()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="newDocument.name" required [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" rows="3" [(ngModel)]="newDocument.description" required [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Edit Document Modal -->
+  <div class="modal fade" id="editDocumentModal" tabindex="-1" role="dialog" aria-labelledby="editDocumentModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editDocumentModalLabel">Edit Document</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="updateDocument()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="selectedDocument.name" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" rows="3" [(ngModel)]="selectedDocument.description" [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

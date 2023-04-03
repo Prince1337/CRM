@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>New Recurring Invoice</h1>
+    <form>
+      <div class="form-group">
+        <label for="customer">Customer</label>
+        <select id="customer" class="form-control" required>
+          <option value="">-- Select a customer --</option>
+          <option value="customer1">Customer 1</option>
+          <option value="customer2">Customer 2</option>
+          <option value="customer3">Customer 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="invoiceNumber">Invoice Number</label>
+        <input type="text" id="invoiceNumber" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="invoiceDate">Invoice Date</label>
+        <input type="date" id="invoiceDate" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Due Date</label>
+        <input type="date" id="dueDate" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" class="form-control" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="frequency">Frequency</label>
+        <select id="frequency" class="form-control" required>
+          <option value="">-- Select a frequency --</option>
+          <option value="monthly">Monthly</option>
+          <option value="quarterly">Quarterly</option>
+          <option value="annually">Annually</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input type="date" id="endDate" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Create Recurring Invoice</button>
+    </form>
+  </div>
+  

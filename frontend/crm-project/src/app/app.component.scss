@@ -1,14 +1,21 @@
 .row {
-    max-width: 100%;
-    margin-right: 0px;
-    --bs-gutter-x: 0;
+  max-width: 100%;
+  margin-right: 0px;
+  --bs-gutter-x: 0;
 
-    .col-md-12{
-        padding-right: 0px;
-    }
+
+  .column {
+    background-color: #32383d;
+    min-height: 100vh;
+    color: white;
+  }
+
+
 }
 
 .components {
-    background-color:black;
-    padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
 }

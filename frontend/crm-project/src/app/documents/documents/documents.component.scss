@@ -1,0 +1,44 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+  
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid #ccc;
+  
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      .document-info {
+        display: flex;
+        align-items: center;
+  
+        img {
+          height: 3rem;
+          margin-right: 1rem;
+        }
+  
+        h3 {
+          margin: 0;
+        }
+      }
+  
+      .actions {
+        display: flex;
+        align-items: center;
+  
+        button {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+  
+  .message {
+    margin: 1rem;
+  }
+  

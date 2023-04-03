@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Email Settings</h1>
+    <form>
+      <div class="form-group">
+        <label for="sender-email">Sender Email:</label>
+        <input type="email" class="form-control" id="sender-email" [(ngModel)]="senderEmail" name="senderEmail">
+      </div>
+      <div class="form-group">
+        <label for="smtp-host">SMTP Host:</label>
+        <input type="text" class="form-control" id="smtp-host" [(ngModel)]="smtpHost" name="smtpHost">
+      </div>
+      <div class="form-group">
+        <label for="smtp-port">SMTP Port:</label>
+        <input type="number" class="form-control" id="smtp-port" [(ngModel)]="smtpPort" name="smtpPort">
+      </div>
+      <div class="form-group">
+        <label for="smtp-username">SMTP Username:</label>
+        <input type="text" class="form-control" id="smtp-username" [(ngModel)]="smtpUsername" name="smtpUsername">
+      </div>
+      <div class="form-group">
+        <label for="smtp-password">SMTP Password:</label>
+        <input type="password" class="form-control" id="smtp-password" [(ngModel)]="smtpPassword" name="smtpPassword">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="saveEmailSettings()">Save</button>
+    </form>
+  </div>
+  

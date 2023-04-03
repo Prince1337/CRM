@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Running Tasks</h1>
+    <ul>
+      <li *ngFor="let task of tasks">
+        {{ task.name }}
+        <button (click)="completeTask(task)">Complete</button>
+      </li>
+    </ul>
+  </div>
+  
