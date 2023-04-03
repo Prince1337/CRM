@@ -4,7 +4,7 @@
       <div class="col-md-6">
         <label for="client">Select Client:</label>
         <select id="client" name="client" [(ngModel)]="selectedClient">
-          <option *ngFor="let client of clients" [value]="client.id">{{ client.name }}</option>
+          <option *ngFor="let client of clients" [value]="client.name">{{ client.name }}</option>
         </select>
       </div>
       <div class="col-md-6">
@@ -17,7 +17,7 @@
     </div>
     <hr>
     <div *ngIf="report">
-      <h2>Report for {{ selectedClient.name }}:</h2>
+      <h2>Report for {{ selectedClient }}:</h2>
       <p>Start Date: {{ startDate }}</p>
       <p>End Date: {{ endDate }}</p>
       <table>

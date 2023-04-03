@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IncomeExpenseComparisonComponent } from './income-expense-comparison.component';
+import { FormsModule } from '@angular/forms';
 
 describe('IncomeExpenseComparisonComponent', () => {
   let component: IncomeExpenseComparisonComponent;
@@ -8,7 +9,10 @@ describe('IncomeExpenseComparisonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IncomeExpenseComparisonComponent ]
+      declarations: [ IncomeExpenseComparisonComponent ],
+      imports: [
+        FormsModule,
+      ]
     })
     .compileComponents();
 

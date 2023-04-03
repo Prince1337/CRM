@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddContactComponent } from './add-contact.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AddContactComponent', () => {
   let component: AddContactComponent;
@@ -8,7 +9,10 @@ describe('AddContactComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddContactComponent ]
+      declarations: [ AddContactComponent ], 
+      imports: [
+        FormsModule,
+      ]
     })
     .compileComponents();
 

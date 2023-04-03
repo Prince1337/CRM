@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewInvoicesComponent } from './new-invoices.component';
+import { FormsModule } from '@angular/forms';
 
 describe('NewInvoicesComponent', () => {
   let component: NewInvoicesComponent;
@@ -8,7 +9,10 @@ describe('NewInvoicesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewInvoicesComponent ]
+      declarations: [ NewInvoicesComponent ],
+      imports: [
+        FormsModule,
+      ]
     })
     .compileComponents();
 

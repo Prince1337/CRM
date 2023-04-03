@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GeneralSettingsComponent } from './general-settings.component';
+import { FormsModule } from '@angular/forms';
 
 describe('GeneralSettingsComponent', () => {
   let component: GeneralSettingsComponent;
@@ -8,7 +9,10 @@ describe('GeneralSettingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GeneralSettingsComponent ]
+      declarations: [ GeneralSettingsComponent ],
+      imports: [
+        FormsModule,
+      ]
     })
     .compileComponents();
 
