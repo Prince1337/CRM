@@ -1,12 +1,9 @@
-// Variable definition
-
-$primary-color: gray;
-$primary-hover-color: darken($primary-color, 10%);
+@import "../../utilities/variables";
 
 // Navbar styling
 
 .navbar-nav {
-  background-color: black;
+  background-color: $color2;
   height: 100%;
   li {
     position: relative;
@@ -15,7 +12,7 @@ $primary-hover-color: darken($primary-color, 10%);
     a {
       display: block;
       padding: 10px;
-      color: white;
+      color: black;
       text-decoration: none;
 
       i {
@@ -23,11 +20,11 @@ $primary-hover-color: darken($primary-color, 10%);
       }
 
       &:hover {
-        background-color: $primary-hover-color;
+        background-color: $color3;
       }
 
       &.active {
-        background-color: $primary-color;
+        background-color: $color4;
       }
     }
 
@@ -41,12 +38,12 @@ $primary-hover-color: darken($primary-color, 10%);
         a {
           display: block;
           padding: 10px;
-          color: #333;
+          color: black;
           text-decoration: none;
 
           &:hover {
-            background-color: $primary-color;
-            color: #fff;
+            background-color: $color2;
+            color: black;
           }
         }
       }

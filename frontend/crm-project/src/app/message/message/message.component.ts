@@ -11,16 +11,24 @@ export class MessageComponent {
       senderId: 'user1',
       receiverId: 'user2',
       subject: 'Hello',
-      body: 'Hi there!',
+      body: 'Hello, send a lorem ipsum text',
       date: new Date('2023-03-29T09:00:00Z'),
     },
     {
       senderId: 'user2',
       receiverId: 'user1',
       subject: 'Re: Hello',
-      body: 'How are you?',
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem corrupti illum, earum in similique fugiat architecto excepturi optio repellat id aut, quos consectetur rerum. Expedita nam debitis natus nemo perspiciatis consequatur quis a porro non dolor explicabo deserunt, tenetur veniam odit, dicta vel cum veritatis reiciendis sit maiores facere? Eum, ullam sequi! Sint saepe atque amet libero eveniet mollitia dolorum nisi minima alias doloribus, autem nulla, facilis eaque deleniti! Nobis, voluptatibus. Ex laudantium provident recusandae quidem hic, atque magni. Id veritatis nemo expedita architecto quo rerum nostrum adipisci dolorem accusamus, odio consectetur, rem amet dicta, vitae eligendi magni. Asperiores, ullam!',
+      date: new Date(),
+    },
+    {
+      senderId: 'user1',
+      receiverId: 'user2',
+      subject: 'Re: Re: Hello',
+      body: 'Good Job',
       date: new Date('2023-03-29T09:01:00Z'),
     },
+    
   ];
   currentUserId = 'user1';
   newMessage = {
@@ -53,8 +61,4 @@ export class MessageComponent {
     }
   }
 
-  editMessage(message: any) {
-    // edit message logic here
-    // not implemented in this example
-  }
 }

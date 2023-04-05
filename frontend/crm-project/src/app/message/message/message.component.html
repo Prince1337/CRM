@@ -1,37 +1,39 @@
 <div class="container">
-    <h1>Messages</h1>
-    <div class="messages">
-      <div *ngFor="let message of messages">
-        <div class="message" [class.sent]="message.senderId === currentUserId" [class.received]="message.receiverId === currentUserId">
-          <div class="message-header">
-            <h3>{{ message.subject }}</h3>
-            <div class="message-date">{{ message.date | date: 'medium' }}</div>
-          </div>
-          <div class="message-body">{{ message.body }}</div>
-          <div class="message-actions" *ngIf="message.senderId === currentUserId">
-            <button (click)="editMessage(message)">Edit</button>
-            <button (click)="deleteMessage(message)">Delete</button>
-          </div>
+  <div class="header">
+    <h1 class="title">Messages</h1>
+  </div>
+  <div class="messages">
+    <div *ngFor="let message of messages" class="message">
+      <div [ngClass]="{'sent': message.senderId === currentUserId, 'received': message.receiverId === currentUserId}" >
+        <div class="message-header">
+          <h2 class="title">{{ message.subject }}</h2>
+          <div class="message-date">{{ message.date | date: 'medium' }}</div>
+        </div>
+        <div class="message-body">{{ message.body }}</div>
+        <div class="message-actions" *ngIf="message.senderId === currentUserId">
+          <button class="button" (click)="deleteMessage(message)">Delete</button>
         </div>
       </div>
     </div>
-    <div class="new-message">
-      <h2>New Message</h2>
-      <form (ngSubmit)="sendMessage()">
-        <div class="form-group">
-          <label for="to">To</label>
-          <input type="text" id="to" name="to" [(ngModel)]="newMessage.receiverId">
-        </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" [(ngModel)]="newMessage.subject">
-        </div>
-        <div class="form-group">
-          <label for="body">Message</label>
-          <textarea id="body" name="body" [(ngModel)]="newMessage.body"></textarea>
-        </div>
-        <button type="submit">Send</button>
-      </form>
-    </div>
   </div>
-  
+  <div class="new-message">
+    <div class="header">
+      <h2 class="title">New Message</h2>
+    </div>
+    <form class="form" (ngSubmit)="sendMessage()">
+      <div class="form-group">
+        <label class="label" for="to">To</label>
+        <input class="input" type="text" id="to" name="to" [(ngModel)]="newMessage.receiverId">
+      </div>
+      <div class="form-group">
+        <label class="label" for="subject">Subject</label>
+        <input class="input" type="text" id="subject" name="subject" [(ngModel)]="newMessage.subject">
+      </div>
+      <div class="form-group">
+        <label class="label" for="body">Message</label>
+        <textarea class="textarea" id="body" name="body" [(ngModel)]="newMessage.body"></textarea>
+      </div>
+      <button class="button" type="submit">Send</button>
+    </form>
+  </div>
+</div>
