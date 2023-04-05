@@ -5,6 +5,8 @@
 .navbar-nav {
   background-color: $color2;
   height: 100%;
+  line-height: 4vh;
+  font-size: 20px;
   li {
     position: relative;
     display: inline-block;
@@ -16,16 +18,13 @@
       text-decoration: none;
 
       i {
-        margin-right: 5px;
+        margin-right: 10px;
       }
 
       &:hover {
-        background-color: $color3;
+        background-color: $color5;
       }
 
-      &.active {
-        background-color: $color4;
-      }
     }
 
     ul.dropdown-menu {
@@ -42,7 +41,7 @@
           text-decoration: none;
 
           &:hover {
-            background-color: $color2;
+            background-color: $color4;
             color: black;
           }
         }
