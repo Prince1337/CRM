@@ -1,13 +1,12 @@
-// Variable definition
-
-$primary-color: gray;
-$primary-hover-color: darken($primary-color, 10%);
+@import "../../utilities/variables";
 
 // Navbar styling
 
 .navbar-nav {
-  background-color: black;
+  background-color: $color2;
   height: 100%;
+  line-height: 4vh;
+  font-size: 20px;
   li {
     position: relative;
     display: inline-block;
@@ -15,20 +14,17 @@ $primary-hover-color: darken($primary-color, 10%);
     a {
       display: block;
       padding: 10px;
-      color: white;
+      color: black;
       text-decoration: none;
 
       i {
-        margin-right: 5px;
+        margin-right: 10px;
       }
 
       &:hover {
-        background-color: $primary-hover-color;
+        background-color: $color5;
       }
 
-      &.active {
-        background-color: $primary-color;
-      }
     }
 
     ul.dropdown-menu {
@@ -41,12 +37,12 @@ $primary-hover-color: darken($primary-color, 10%);
         a {
           display: block;
           padding: 10px;
-          color: #333;
+          color: black;
           text-decoration: none;
 
           &:hover {
-            background-color: $primary-color;
-            color: #fff;
+            background-color: $color4;
+            color: black;
           }
         }
       }

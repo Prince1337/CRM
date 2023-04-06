@@ -1,3 +1,5 @@
+@import "../utilities/variables";
+
 .row {
   max-width: 100%;
   margin-right: 0px;
@@ -5,7 +7,7 @@
 
 
   .column {
-    background-color: #32383d;
+    background-color: $color1;
     min-height: 100vh;
     color: white;
   }

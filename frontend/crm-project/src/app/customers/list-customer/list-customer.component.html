@@ -1,18 +1,20 @@
 <div class="container">
-  <button routerLink="/add/customer" class="btn btn-primary">
-    Add Customer
-  </button>
-  <button (onClick)="downloadCSV()" class="btn btn-primary">Download CSV</button>
-  <table>
+  <div class="button-group">
+    <button routerLink="/add/customer" class="btn btn-primary">
+      Add Customer
+    </button>
+    <button (click)="downloadCSV()" class="btn btn-primary">Download CSV</button>
+  </div>
+  <table class="customer-table">
     <caption>List of all Customers working with our Company</caption>
     <thead>
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Created At</th>
-        <th>Action</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -22,11 +24,15 @@
         <td>{{ customer.email }}</td>
         <td>{{ customer.phone }}</td>
         <td>{{ customer.createdAt }}</td>
-        <td>
-          <i class="fa fa-edit" (click)="editCustomer(customer)"></i>
-          <i class="fa fa-trash" (click)="deleteCustomer(customer)"></i>
+        <td class="action-buttons">
+          <button (click)="editCustomer(customer)" class="btn-edit">
+            <i class="fa fa-pencil"></i>
+          </button>
+          <button (click)="deleteCustomer(customer)" class="btn-delete">
+            <i class="fa fa-trash"></i>
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
-</div>
+</div> 

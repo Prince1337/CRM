@@ -1,36 +1,64 @@
+@import "../../utilities/variables";
+
 .header {
-  color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  
-  .container-fluid {
-    .row {
-      .col-2, .col-sm-2, .col-md-2, .col-lg-2 {
-        display: flex;
-        align-items: center;
-        
-        a {
-          font-size: 20px;
-          margin-right: 15px;
-          
-          i {
-            font-size: 20px;
-          }
+  background-color: $color1;
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+    .col-2 {
+      display: flex;
+      align-items: center;
+
+      a {
+        color: $color2;
+        font-size: 16px;
+        margin-right: 10px;
+
+        &:last-of-type {
+          margin-right: 0;
         }
       }
-      
-      .col-10, .col-sm-10, .col-md-10, .col-lg-10 {
+    }
+
+    .col-10 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      a {
         display: flex;
-        justify-content: flex-end;
         align-items: center;
-        
-        a {
-          font-size: 20px;
-          margin-left: 15px;
-          
-          i {
-            font-size: 20px;
+        color: $color2;
+        font-size: 16px;
+        margin-left: 10px;
+
+        i {
+          margin-right: 5px;
+        }
+
+        .badge {
+          background-color: $color2;
+          border-radius: 50%;
+          color: $color3;
+          font-size: 16px;
+          height: 20px;
+          width: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 0px;
+
+          &:last-of-type {
+            margin-right: 10px;
           }
+        }
+
+        &:last-of-type {
+          margin-right: 0px;
         }
       }
     }
