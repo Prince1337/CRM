@@ -36,15 +36,19 @@
         font-size: 16px;
         margin-left: 10px;
 
+        :hover{
+          font-size: 24px;
+        }
+
         i {
           margin-right: 5px;
         }
 
         .badge {
-          background-color: $color2;
+          background-color: $color5;
           border-radius: 50%;
           color: $color3;
-          font-size: 16px;
+          font-size: 12px;
           height: 20px;
           width: 20px;
           display: flex;
@@ -56,6 +60,8 @@
             margin-right: 10px;
           }
         }
+
+        
 
         &:last-of-type {
           margin-right: 0px;
