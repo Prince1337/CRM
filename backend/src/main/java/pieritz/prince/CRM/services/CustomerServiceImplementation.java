@@ -24,9 +24,9 @@ public class CustomerServiceImplementation implements CustomerService {
 
     @Override
     public Customer getCustomerById(Long id) {
-            return customerRepository.findById(id)
-                    .orElseThrow(() -> new EntityNotFoundException("Customer not found with id " + id));
-        }
+        return customerRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Customer not found with id " + id));
+    }
 
     @Override
     public Customer createCustomer(Customer customer) {
@@ -48,4 +48,41 @@ public class CustomerServiceImplementation implements CustomerService {
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);
     }
+
+    @Override
+    public Customer getCustomerByEmail(String email) {
+        return customerRepository.findByEmail(email);
+    }
+
+    @Override
+    public Customer getCustomerByPhone(String phone) {
+        return customerRepository.findByPhone(phone);
+    }
+
+    @Override
+    public List<Customer> getCustomersByFirstName(String firstName) {
+        return customerRepository.findByFirstName(firstName);
+    }
+
+    @Override
+    public List<Customer> getCustomersByLastName(String lastName) {
+        return customerRepository.findByLastName(lastName);
+    }
+
+    @Override
+    public Customer getCustomerByEmailAndPhone(String email, String phone) {
+        return customerRepository.findByEmailAndPhone(email, phone);
+    }
+
+    @Override
+    public List<Customer> getCustomersByCreatedAt(Date createdAt) {
+        return customerRepository.findByCreatedAt(createdAt);
+    }
+
+    @Override
+    public Customer getCustomerByLastNameAndFirstName(String lastName, String firstName) {
+        return customerRepository.findByLastNameAndFirstName(lastName, firstName);
+    }
+
+
 }
