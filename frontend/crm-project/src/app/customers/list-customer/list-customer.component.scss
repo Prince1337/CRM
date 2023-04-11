@@ -1,3 +1,5 @@
+@import "../../../utilities/variables";
+
 .container {
   padding: 20px;
 
@@ -5,9 +7,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     margin-bottom: 20px;
 
     button {
+      background-color: $color5;
+      border: 2px solid $color3;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 3px 3px 10px $color3;
+
+
+      &:hover {
+        font-size: 20px;
+        opacity: 0.5;
+      }
       &:first-child {
         margin-right: 20px;
       }
@@ -15,24 +32,34 @@
   }
 
   table.customer-table {
+    border: 2px solid $color3;
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    box-shadow: 3px 3px 10px $color3;
+
 
     caption {
-      font-size: 1.5rem;
+      font-size: 16px;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin: 20px 0;
+  
     }
 
     thead {
-      background-color: #f7f7f7;
-      color: #333;
+      border: 2px solid $color3;
+
+      background-color: $color5;
+      color: white;
       font-weight: bold;
 
       th {
+        border: 2px solid $color3;
         padding: 10px;
-        text-align: left;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
       }
     }
 
@@ -40,6 +67,8 @@
       tr {
         td {
           padding: 10px;
+          font-size: 12px;
+
         }
 
         .action-buttons {
@@ -49,10 +78,10 @@
             font-size: 1rem;
             cursor: pointer;
             margin-right: 10px;
-            transition: color 0.2s ease;
+            transition: color 0.2s ease;            
 
             &:hover {
-              color: #007aff;
+              color: $color3;
             }
 
             i {
@@ -61,11 +90,11 @@
           }
 
           .btn-edit {
-            color: #007aff;
+            color: $color2;
           }
 
           .btn-delete {
-            color: #ff3b30;
+            color: $color5;
           }
         }
       }

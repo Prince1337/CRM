@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/dataservice.service';
 
 @Component({
   selector: 'app-expense-management',
@@ -6,17 +7,49 @@ import { Component } from '@angular/core';
   styleUrls: ['./expense-management.component.scss']
 })
 export class ExpenseManagementComponent {
-  expenses = [
-    {date: new Date(2022, 2, 1), category: 'Office Supplies', description: 'Pens and Paper', amount: 10},
-    {date: new Date(2022, 2, 3), category: 'Internet', description: 'Monthly Internet Bill', amount: 100},
-    {date: new Date(2022, 2, 5), category: 'Travel', description: 'Gas for Business Trip', amount: 50},
-    {date: new Date(2022, 2, 8), category: 'Meals and Entertainment', description: 'Client Dinner', amount: 75},
-    {date: new Date(2022, 2, 10), category: 'Rent', description: 'Office Rent', amount: 1000},
-    {date: new Date(2022, 2, 12), category: 'Marketing', description: 'Social Media Ads', amount: 200},
-  ];
+  expenses!: Expenses[];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    const expensesData = this.dataService.getData("expenses");
+    if (expensesData.length > 0) {
+      this.expenses = expensesData;
+    } else {
+      this.expenses = [
+        {
+          date: new Date(),
+          category: 'Food',
+          description: 'Expenses related to food and drinks',
+          amount: 100
+        },
+        {
+          date: new Date(),
+          category: 'Transportation',
+          description: 'Expenses related to transportation',
+          amount: 200
+        },
+        {
+          date: new Date(),
+          category: 'Entertainment',
+          description: 'Expenses related to entertainment activities',
+          amount: 300
+        }
+      ];
+      this.dataService.saveData(this.expenses, 'expenses');
+    }
+  } 
+
+  deleteExpenses(expenses: Expenses):void {
+    const index = this.expenses.findIndex(expense => expense.date === expenses.date);
+    this.expenses.splice(index, 1);
+    this.dataService.saveData(this.expenses, 'expenses');
   }
+}
+
+interface Expenses {
+  date: Date;
+  category: string;
+  description: string;
+  amount: number;
 }

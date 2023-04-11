@@ -32,6 +32,36 @@ public class ContactServiceImplementation implements ContactService {
     }
 
     @Override
+    public Contact getContactByEmail(String email) {
+        return contactRepository.findByEmail(email);
+    }
+
+    @Override
+    public Contact getContactByPhone(String phone) {
+        return contactRepository.findByPhone(phone);
+    }
+
+    @Override
+    public Contact getContactByFirstName(String firstName) {
+        return contactRepository.findByFirstName(firstName);
+    }
+
+    @Override
+    public Contact getContactByLastName(String lastName) {
+        return contactRepository.findByLastName(lastName);
+    }
+
+    @Override
+    public List<Contact> getContactsByCreatedAt(Date createdAt) {
+        return contactRepository.findByCreatedAt(createdAt);
+    }
+
+    @Override
+    public Contact getContactByEmailAndPhone(String email, String phone) {
+        return contactRepository.findByEmailAndPhone(email, phone);
+    }
+
+    @Override
     public List<Contact> getContactsByCustomer(Customer customer) {
         return contactRepository.findByCustomer(customer);
     }
@@ -61,6 +91,7 @@ public class ContactServiceImplementation implements ContactService {
 
     @Override
     public boolean deleteContact(Long id) {
+        // delete the contact by id
         Optional<Contact> contactOptional = contactRepository.findById(id);
         if (contactOptional.isPresent()) {
             contactRepository.deleteById(id);

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Customer } from 'src/app/customers/customer';
 
 @Component({
   selector: 'app-recurring-invoices',
@@ -13,4 +12,12 @@ export class RecurringInvoicesComponent {
     console.log(form);
     // TODO: Save invoice data to database
     }
+}
+
+interface Customer {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  createdAt: Date;
 }

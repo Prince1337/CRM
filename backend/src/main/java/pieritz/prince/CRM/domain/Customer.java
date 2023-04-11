@@ -40,4 +40,30 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    public Customer(String firstName, String lastName, String email, String phone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public Customer(String firstName, String lastName, String email, String phone, Date createdAt) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.createdAt = createdAt;
+    }
+
+    public Customer(String firstName, String lastName, String email, String phone, Date createdAt, List<Contact> contacts) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.createdAt = createdAt;
+        this.contacts = contacts;
+    }
+
+
 }

@@ -15,6 +15,7 @@ import pieritz.prince.CRM.domain.Customer;
 import pieritz.prince.CRM.services.ContactService;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -101,6 +102,36 @@ class ContactControllerTest {
 
         verify(contactService).deleteContact(1L);
         assertEquals(200, result.getResponse().getStatus());
+    }
+
+    @Test
+    public void getAllContactsTest() throws Exception {
+        Contact contact = new Contact();
+        contact.setId(1L);
+        contact.setFirstName("Max");
+        contact.setLastName("Mustermann");
+        contact.setEmail("max.mustermann@example.com");
+        contact.setPhone("+491234567890");
+        contact.setCreatedAt(new Date());
+
+        Customer customer = new Customer();
+        customer.setId(1L);
+        contact.setCustomer(customer);
+
+        when(contactService.getAllContacts()).thenReturn(List.of(contact));
+    }
+
+    @Test
+    public void getContactByIdTest() throws Exception {
+        Contact contact = new Contact();
+        contact.setId(1L);
+        contact.setFirstName("Max");
+        contact.setLastName("Mustermann");
+        contact.setEmail("max.mustermann@example.com");
+        contact.setPhone("+491234567890");
+        contact.setCreatedAt(new Date());
+
+        when(contactService.getContactById(1L)).thenReturn(contact);
     }
 
 }

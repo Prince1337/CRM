@@ -45,7 +45,7 @@ public class ContactServiceTest {
         contact1.setLastName("Doe");
         contact1.setEmail("johndoe@test.com");
         contact1.setPhone("1234567890");
-        contact1.setCreatedAt(new Date());
+        contact1.setCreatedAt(new Date(1000));
         contact1.setCustomer(customer);
 
         contact2 = new Contact();
@@ -54,7 +54,7 @@ public class ContactServiceTest {
         contact2.setLastName("Doe");
         contact2.setEmail("janedoe@test.com");
         contact2.setPhone("0987654321");
-        contact2.setCreatedAt(new Date());
+        contact2.setCreatedAt(new Date(1000));
         contact2.setCustomer(customer);
     }
 
@@ -125,4 +125,71 @@ public class ContactServiceTest {
         // Verifying that the deleteById method was called with the correct argument
         verify(contactRepository, times(1)).deleteById(contactId);
     }
+
+    @Test
+    public void testNotDeleteContact() {
+        Long contactId = 10L;
+        // Deleting the contact
+        boolean isDeleted = contactService.deleteContact(contactId);
+
+        // Verifying that the delete operation was successful
+        assertFalse(isDeleted);
+
+        // Verifying that the deleteById method was called with the correct argument
+        verify(contactRepository, never()).deleteById(contactId);
+
+    }
+
+    @Test
+    public void testGetContactByEmail() {
+        when(contactRepository.findByEmail("johndoe@test.com")).thenReturn(contact1);
+        Contact contact = contactService.getContactByEmail("johndoe@test.com");
+        assertEquals("John", contact.getFirstName());
+    }
+
+    @Test
+    public void testGetContactByPhone() {
+        when(contactRepository.findByPhone("1234567890")).thenReturn(contact1);
+        Contact contact = contactService.getContactByPhone("1234567890");
+        assertEquals("John", contact.getFirstName());
+    }
+
+    @Test
+    public void testGetContactByEmailAndPhone() {
+        when(contactRepository.findByEmailAndPhone("johndoe@test.com", "1234567890")).thenReturn(contact1);
+        Contact contact = contactService.getContactByEmailAndPhone("johndoe@test.com", "1234567890");
+        assertEquals("John", contact.getFirstName());
+    }
+
+    @Test
+    public void testGetContactByEmailAndPhone2() {
+        when(contactRepository.findByEmailAndPhone("johndoe@test.com", "0987654321")).thenReturn(contact1);
+        Contact contact = contactService.getContactByEmailAndPhone("johndoe@test.com", "0987654321");
+        assertEquals("John", contact.getFirstName());
+    }
+
+    @Test
+    public void testGetContactByFirstName() {
+        when(contactRepository.findByFirstName("John")).thenReturn(contact1);
+        Contact contact = contactService.getContactByFirstName("John");
+        assertEquals("John", contact.getFirstName());
+    }
+
+    @Test
+    public void testGetContactByLastName() {
+        when(contactRepository.findByLastName("Doe")).thenReturn(contact1);
+        Contact contact = contactService.getContactByLastName("Doe");
+        assertEquals("John", contact.getFirstName());
+    }
+
+    @Test
+    public void testGetContactsByCreatedAt() {
+        when(contactRepository.findByCreatedAt(new Date(1000))).thenReturn(Arrays.asList(contact1, contact2));
+        List<Contact> contacts = contactService.getContactsByCreatedAt(new Date(1000));
+        assertEquals(2, contacts.size());
+    }
+
+
+
+
 }

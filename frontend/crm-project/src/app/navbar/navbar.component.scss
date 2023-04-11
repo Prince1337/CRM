@@ -48,8 +48,8 @@
       }
     }
 
-    &:hover ul.dropdown-menu {
-      display:inline;
+    &.show ul.dropdown-menu {
+      display:block;
     }
   }
 }
