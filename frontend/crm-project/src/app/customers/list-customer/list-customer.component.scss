@@ -25,7 +25,6 @@
         font-size: 20px;
         opacity: 0.5;
       }
-      
       &:first-child {
         margin-right: 20px;
       }
@@ -69,6 +68,7 @@
         td {
           padding: 10px;
           font-size: 12px;
+
         }
 
         .action-buttons {
@@ -78,8 +78,7 @@
             font-size: 1rem;
             cursor: pointer;
             margin-right: 10px;
-            transition: color 0.2s ease;
-            
+            transition: color 0.2s ease;            
 
             &:hover {
               color: $color3;
