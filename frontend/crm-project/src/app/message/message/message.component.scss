@@ -3,143 +3,94 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  margin: 30px;
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    .title {
-      font-size: 36px;
-      font-weight: bold;
-      color: white;
-      text-align: center;
-    }
-  }
-  .messages {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    max-width: 50%;
-    .message {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      margin-bottom: 20px;
-      .sent {
-        background-color: $color5;
-        border-radius: 10px;
-        padding: 10px;
-        .message-header {
-          .title {
-            color: white;
-          }
-          .message-date {
-            color: white;
-          }
-        }
-        .message-body {
-          color: white;
-        }
-      }
-      .received {
-        background-color: $color3;
-        border-radius: 10px;
-        padding: 10px;
-      }
-      .message-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 10px;
-        .title {
-          font-size: 24px;
-          font-weight: bold;
-          color: black;
-        }
-        .message-date {
-          font-size: 16px;
-          color: black;
-        }
-      }
-      .message-body {
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 16px;
-        color: black;
-      }
-      .message-actions {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        width: 100%;
-        button {
-          margin-left: 10px;
-        }
-      }
-    }
-  }
-  .new-message {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  
+  .card {
     width: 100%;
-    margin-top: 20px;
-    border-top: 1px solid #8e8e93;
-    padding-top: 20px;
-    .header {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 20px;
-      .title {
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: black;
+    
+    .card-header {
+      padding: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      
+      h2 {
         font-size: 24px;
         font-weight: bold;
-        color: white;
-        text-align: center;
+        margin-bottom: 0;
       }
     }
-    .form {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      .form-group {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 10px;
-        .label {
-          font-size: 16px;
-          font-weight: bold;
-          color: white;
-          margin-bottom: 5px;
+    
+    .card-body {
+      padding: 20px;
+      
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+        li {
+          margin-bottom: 10px;
+          
+          .card {
+            border: none;
+            box-shadow: none;
+            
+            .card-body {
+              padding: 10px;
+              
+              h5 {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 5px;
+              }
+              
+              p {
+                margin: 0;
+              }
+            }
+          }
         }
-        .input,
-        .textarea {
-          width: 100%;
-          padding: 10px;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        
+        .form-group {
+          flex-grow: 1;
+          margin-right: 10px;
+          
+          input {
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+          }
+        }
+        
+        button {
           font-size: 16px;
-          color: black;
-          border: 1px solid #8e8e93;
+          padding: 10px 20px;
           border-radius: 5px;
-          &:focus {
-            outline: none;
-            border: 1px solid $color5;
+          border: none;
+          background-color: #007aff;
+          color: #fff;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          
+          &:hover {
+            background-color: #0062cc;
           }
         }
       }

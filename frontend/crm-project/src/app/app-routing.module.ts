@@ -33,10 +33,14 @@ import { StaffSettingsComponent } from './setting/staff-settings/staff-settings.
 import { ArchiveTaskComponent } from './task/archive-task/archive-task.component';
 import { RunningTaskComponent } from './task/running-task/running-task.component';
 import { UserComponent } from './user/user/user.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
 
   {path: 'dashboard', component: DashboardComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'add/customer', component: AddCustomerComponent},
   {path: 'list/customer', component: ListCustomerComponent},
 

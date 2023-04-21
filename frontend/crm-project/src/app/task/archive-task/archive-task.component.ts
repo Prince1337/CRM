@@ -1,32 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ArchivedTask } from 'src/app/model/archived-task';
+import { ArchivedTaskService } from 'src/app/services/archived-task.service';
 
 @Component({
   selector: 'app-archive-task',
   templateUrl: './archive-task.component.html',
   styleUrls: ['./archive-task.component.scss']
 })
-export class ArchiveTaskComponent {
-  archivedTasks = [
-    {
-      name: 'Task 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      startDate: new Date('2022-01-01'),
-      endDate: new Date('2022-01-31'),
-      status: 'Completed'
-    },
-    {
-      name: 'Task 2',
-      description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      startDate: new Date('2022-02-01'),
-      endDate: new Date('2022-02-28'),
-      status: 'Completed'
-    },
-    {
-      name: 'Task 3',
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      startDate: new Date('2022-03-01'),
-      endDate: new Date('2022-03-31'),
-      status: 'Completed'
-    }
-  ];
+export class ArchiveTaskComponent implements OnInit {
+  archivedTasks: ArchivedTask[] = [];
+
+  constructor(private archivedTaskService: ArchivedTaskService) { }
+
+  ngOnInit(): void {
+    this.getAllArchivedTasks();
+  }
+
+  getAllArchivedTasks(): void {
+    this.archivedTaskService.getAllArchivedTasks().subscribe(
+      data => {
+        this.archivedTasks = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  deleteArchivedTask(id: number): void {
+    this.archivedTaskService.deleteArchivedTaskById(id).subscribe(
+      () => {
+        this.getAllArchivedTasks();
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 }

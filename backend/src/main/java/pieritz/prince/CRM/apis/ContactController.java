@@ -1,16 +1,23 @@
 package pieritz.prince.CRM.apis;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pieritz.prince.CRM.domain.Contact;
 import pieritz.prince.CRM.services.ContactService;
 
 @RestController
 @RequestMapping("/contacts")
+@CrossOrigin("http://localhost:4200")
 public class ContactController {
     private final ContactService contactService;
 
     public ContactController(ContactService contactService) {
         this.contactService = contactService;
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<Iterable<Contact>> getAllContacts() {
+        return ResponseEntity.ok(contactService.getAllContacts());
     }
 
     @PostMapping("/create")

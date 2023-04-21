@@ -7,7 +7,7 @@
   justify-content: center;
   padding: 2rem;
   width: 100vh;
-  background-color: $color5;
+  background-color: $color1;
   border-radius: 8px;
   border: 2px solid $color3;
   box-shadow: 3px 3px 10px $color3;
@@ -15,6 +15,7 @@
 
 .row {
   padding-bottom: 170px;
+  width: 80%;
 
   .title {
     font-size: 2rem;

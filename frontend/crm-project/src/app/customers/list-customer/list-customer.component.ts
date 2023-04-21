@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/dataservice.service';
+import { Customer } from 'src/app/model/customer';
+import { DataService } from 'src/app/services/dataservice.service';
 
 @Component({
   selector: 'app-list-customer',
@@ -8,41 +9,14 @@ import { DataService } from 'src/app/dataservice.service';
 })
 export class ListCustomerComponent implements OnInit {
 
-  customers!: Customer[];
-
-  constructor(private dataService: DataService) { }
+  customers: Customer[] = [];
 
   ngOnInit(): void {
-    const customersData = this.dataService.getData("customers");
-    if (customersData.length > 0) {
-      this.customers = customersData;
-    } else {
-      this.customers = [
-        {
-          firstName: 'John',
-          lastName: 'Doe',
-          email: 'johndoe@example.com',
-          phone: '123-456-7890',
-          createdAt: new Date()
-        },
-        {
-          firstName: 'Jane',
-          lastName: 'Doe',
-          email: 'janedoe@example.com',
-          phone: '555-555-5555',
-          createdAt: new Date()
-        },
-        {
-          firstName: 'Bob',
-          lastName: 'Smith',
-          email: 'bobsmith@example.com',
-          phone: '555-123-4567',
-          createdAt: new Date()
-        }
-      ];
-      this.dataService.saveData(this.customers, "customers");
-    }
+    this.dataService.getCustomers()
+      .subscribe(customers => this.customers = customers);
   }
+
+  constructor(private dataService: DataService) { }
 
   editCustomer(customer: Customer): void {
     // Implementierung der Edit-Funktion
@@ -75,12 +49,4 @@ export class ListCustomerComponent implements OnInit {
     link.click();
   }
 
-}
-
-interface Customer {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  createdAt: Date;
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DocumentClass } from 'src/app/model/document-class';
+import { DocumentService } from 'src/app/services/document.service';
 
 @Component({
   selector: 'app-documents',
@@ -6,62 +8,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./documents.component.scss'],
 })
 export class DocumentsComponent {
-  // Sample document data
-  documents = [
-    { name: 'Document 1', description: 'Description for Document 1' },
-    { name: 'Document 2', description: 'Description for Document 2' },
-    { name: 'Document 3', description: 'Description for Document 3' },
-  ];
+  documents: DocumentClass[] = [];
 
-  // Variables for new document and selected document
-  newDocument = { name: '', description: '' };
-  selectedDocument = { name: '', description: '' };
+  constructor(private documentService: DocumentService) { }
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  // Function to show add document modal
-  showAddDocumentModal() {}
-
-  // Function to add a new document
-  addDocument() {
-    // Add new document to documents array
-    this.documents.push(this.newDocument);
-    // Clear newDocument variable
-    this.newDocument = { name: '', description: '' };
-    // Hide add document modal
+  ngOnInit(): void {
+    this.getDocumentList();
   }
 
-  // Function to show edit document modal
-  showEditDocumentModal(document: any) {
-    // Assign selected document to selectedDocument variable
-    this.selectedDocument = document;
-    // Show edit document modal
+  getDocumentList(): void {
+    this.documentService.getAllDocuments()
+      .subscribe(documents => this.documents = documents);
   }
 
-  // Function to update selected document
-  updateDocument() {
-    // Loop through documents array to find selected document and update it
-    for (let i = 0; i < this.documents.length; i++) {
-      if (this.documents[i] == this.selectedDocument) {
-        this.documents[i] = this.selectedDocument;
-        break;
-      }
-    }
-    // Clear selectedDocument variable
-    this.selectedDocument = { name: '', description: '' };
-    // Hide edit document modal
+  createDocument(document: DocumentClass): void {
+    this.documentService.createDocument(document)
+      .subscribe(createdDocument => this.documents.push(createdDocument));
   }
 
-  // Function to delete a document
-  deleteDocument(document: any) {
-    // Loop through documents array to find selected document and remove it
-    for (let i = 0; i < this.documents.length; i++) {
-      if (this.documents[i] == document) {
-        this.documents.splice(i, 1);
-        break;
-      }
-    }
+  updateDocument(document: DocumentClass): void {
+    this.documentService.updateDocument(document.id, document)
+      .subscribe(updatedDocument => {
+        const index = this.documents.findIndex(d => d.id === updatedDocument.id);
+        this.documents[index] = updatedDocument;
+      });
+  }
+
+  deleteDocument(id: number): void {
+    this.documentService.deleteDocument(id)
+      .subscribe(() => {
+        const index = this.documents.findIndex(d => d.id === id);
+        this.documents.splice(index, 1);
+      });
   }
 }

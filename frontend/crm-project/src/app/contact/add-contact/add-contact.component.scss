@@ -1,6 +1,14 @@
+@import "../../../utilities/variables";
+
 .container {
     margin: 20px auto;
     max-width: 600px;
+    width: 100vh;
+    border-radius: 8px;
+    border: 2px solid $color3;
+    box-shadow: 3px 3px 10px $color3;
+  padding: 2rem;
+
   
     h1 {
       margin-bottom: 20px;
@@ -33,6 +41,8 @@
         width: 100%;
         max-width: 200px;
         margin: 20px auto 0;
+        background-color: $color5;
+        border-color: $color5;
       }
     }
   }

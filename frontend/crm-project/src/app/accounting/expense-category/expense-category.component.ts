@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/dataservice.service';
+import { DataService } from 'src/app/services/dataservice.service';
 
 @Component({
   selector: 'app-expense-category',

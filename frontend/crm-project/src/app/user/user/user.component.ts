@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserList } from 'src/app/model/user-list';
+import { UserListService } from 'src/app/services/user-list.service';
 
 @Component({
   selector: 'app-user',
@@ -6,24 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent {
-  users: User[] = [
-    { name: 'John Doe', email: 'john@example.com', role: 'Admin' },
-    { name: 'Jane Doe', email: 'jane@example.com', role: 'Editor' },
-    { name: 'Bob Smith', email: 'bob@example.com', role: 'Viewer' },
-    { name: 'Alice Johnson', email: 'alice@example.com', role: 'Admin' }
-  ];
+  users!: UserList[];
 
-  editUser(user: User) {
+  constructor(private userService: UserListService) { }
+
+  ngOnInit(): void {
+    this.userService.getAllUsers().subscribe(users => this.users = users);
+  }
+
+  editUser(user: UserList) {
     // Logic to edit user
   }
 
-  deleteUser(user: User) {
+  deleteUser(user: UserList) {
     // Logic to delete user
   }
-}
-
-interface User {
-  name: string;
-  email: string;
-  role: string;
 }

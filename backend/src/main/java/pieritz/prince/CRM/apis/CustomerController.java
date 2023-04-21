@@ -1,19 +1,24 @@
 package pieritz.prince.CRM.apis;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pieritz.prince.CRM.domain.Customer;
 import pieritz.prince.CRM.services.CustomerService;
 
-@RestController
+import java.util.List;
+
 @RequestMapping("/customers")
+@RestController
+@CrossOrigin(originPatterns = "http://localhost:4200")
+@RequiredArgsConstructor
 public class CustomerController {
     private final CustomerService customerService;
 
-    @Autowired
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-    }
+    @GetMapping
+    public ResponseEntity<List<Customer>> getAllCustomers() {
+        return ResponseEntity.ok(customerService.getAllCustomers());
+    }   
 
     @PostMapping("/create")
     @ResponseBody

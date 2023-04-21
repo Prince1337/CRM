@@ -1,3 +1,5 @@
+@import "../../../utilities/variables";
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -10,6 +12,8 @@
 
   button {
     margin-bottom: 20px;
+    background-color: $color5;
+    border-color: $color5;
   }
 
   table {

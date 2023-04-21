@@ -1,0 +1,74 @@
+@import "../../utilities/variables";
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+
+    label {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"], input[type="password"] {
+      border: none;
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      background-color: #F2F2F2;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.2);
+        background-color: #E2E2E2;
+      }
+    }
+  }
+
+  button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+
+    &:not(:last-child) {
+      margin: 1rem;
+    }
+
+    &.btn-primary {
+      color: white;
+      background-color: $color5;
+      border: none;
+
+      &:hover {
+        background-color: darken($color5, 15%);
+      }
+    }
+
+    &.btn-secondary {
+      color: white;
+      background-color: transparent;
+      border: 0.1rem solid $color5;
+
+      &:hover {
+        background-color: $color5;
+        color: white;
+      }
+    }
+  }
+}

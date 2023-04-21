@@ -1,3 +1,5 @@
+@import "../../../utilities/variables";
+
 .container {
     margin: 20px;
     
@@ -8,6 +10,8 @@
     
     button {
       margin-bottom: 20px;
+      background-color: $color5;
+      border-color: $color5;
     }
     
     table {
@@ -21,7 +25,7 @@
       }
       
       th {
-        background-color: #32383d;
+        background-color: $color5;
       }
       
       td:last-child {
