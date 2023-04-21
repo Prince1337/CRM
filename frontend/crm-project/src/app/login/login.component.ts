@@ -20,9 +20,9 @@ export class LoginComponent {
   handleLogin(): void {
     this.authService.login(this.loginRequest).subscribe(
       (response) => {
+        this.router.navigate(['/dashboard']);
         localStorage.setItem('access_token', response.access_token);
-        console.log(response);
-        console.log('Success!');
+        alert('Success!');
       },
       (error) => {
         alert('Invalid username or password');

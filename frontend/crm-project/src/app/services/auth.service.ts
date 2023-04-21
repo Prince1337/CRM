@@ -8,7 +8,6 @@ import { baseUrl } from '../../environments/environment';
 })
 export class AuthService {
 
-
   public username!: string;
   public password!: string;
 
@@ -18,6 +17,11 @@ export class AuthService {
 
   login(loginRequest: LoginRequest): Observable<any> {
     return this.http.post<any>(`${baseUrl}/auth/authenticate`, loginRequest);
+  }
+
+  logout() {
+    const logoutUrl = 'http://localhost:8080/auth/logout';
+    return this.http.post(logoutUrl, {});
   }
 
   createBasicAuthToken(username: string, password: string) {
