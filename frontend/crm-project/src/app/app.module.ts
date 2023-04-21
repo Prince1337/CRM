@@ -84,7 +84,7 @@ import { RegisterComponent } from './register/register.component';
     NotesComponent,
     CalendarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

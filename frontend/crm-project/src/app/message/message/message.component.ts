@@ -13,7 +13,7 @@ export class MessageComponent implements OnInit {
   receiverId!: string;
   messages!: Message[];
 
-  constructor(private route: ActivatedRoute, private messageService: MessageService) { }
+  constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.senderId = "2";
