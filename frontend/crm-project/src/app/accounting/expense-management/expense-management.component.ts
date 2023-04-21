@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { Expense } from 'src/app/model/expense';
 import { ExpenseService } from 'src/app/services/expense.service';
+
 
 @Component({
   selector: 'app-expense-management',
@@ -35,4 +37,11 @@ export class ExpenseManagementComponent {
     });
   }
   
+}
+
+interface Expenses {
+  date: Date;
+  category: string;
+  description: string;
+  amount: number;
 }

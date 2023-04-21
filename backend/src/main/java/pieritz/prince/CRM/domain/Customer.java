@@ -32,5 +32,4 @@ public class Customer {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
-
 }

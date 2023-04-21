@@ -47,5 +47,4 @@ export class RecurringInvoicesComponent implements OnInit {
         this.recurringInvoices = this.recurringInvoices.filter(i => i.invoiceNumber !== invoiceNumber);
       });
   }
-
 }

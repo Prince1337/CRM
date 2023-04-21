@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Customer } from 'src/app/model/customer';
 import { DataService } from 'src/app/services/dataservice.service';
 
@@ -17,7 +18,6 @@ export class ListCustomerComponent implements OnInit {
   }
 
   constructor(private dataService: DataService) { }
-
   editCustomer(customer: Customer): void {
     // Implementierung der Edit-Funktion
     console.log(`Editing customer ${customer.firstName} ${customer.lastName}`);
@@ -48,5 +48,6 @@ export class ListCustomerComponent implements OnInit {
     document.body.appendChild(link);
     link.click();
   }
+
 
 }
