@@ -25,6 +25,12 @@
         <a routerLink="/" class="icon-link">
           <i class="fa fa-user"></i>
         </a>
+        <a routerLink="/login" class="icon-link" *ngIf="!isLoggedIn()">
+          <button>Login</button>
+        </a>
+        <a (click)="logout()" class="icon-link" *ngIf="isLoggedIn()">
+          <button>Logout</button>
+        </a>
       </div>
     </div>
   </div>

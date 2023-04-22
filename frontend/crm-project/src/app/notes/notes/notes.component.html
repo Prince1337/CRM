@@ -1,32 +1,36 @@
-<div class="container">
-  <h1>Notes</h1>
-  <div class="notes">
-    <div *ngFor="let note of notes">
-      <div class="note">
-        <div class="note-header">
-          <h3>{{ note.title }}</h3>
-          <div class="note-date">{{ note.date | date: 'medium' }}</div>
-        </div>
-        <div class="note-body">{{ note.body }}</div>
-        <div class="note-actions">
-          <button (click)="editNote(note)">Edit</button>
-          <button (click)="deleteNote(note)">Delete</button>
-        </div>
-      </div>
+<div>
+  <h2>Notes</h2>
+
+  <div>
+    <label>Title:</label>
+    <input [(ngModel)]="title" placeholder="Enter title"/>
+  </div>
+
+  <div>
+    <label>Content:</label>
+    <input [(ngModel)]="content" placeholder="Enter content"/>
+  </div>
+
+  <button (click)="add(title, content)">Add</button>
+
+  <ul>
+    <li *ngFor="let note of notes" [class.selected]="note === selectedNote" (click)="onSelect(note)">
+      <span>{{note.title}}</span>
+    </li>
+  </ul>
+
+  <div *ngIf="selectedNote">
+    <h2>{{selectedNote.title}}</h2>
+    <div>
+      <label>Title:</label>
+      <input [(ngModel)]="selectedNote.title" placeholder="Enter title"/>
     </div>
+    <div>
+      <label>Content:</label>
+      <input [(ngModel)]="selectedNote.content" placeholder="Enter content"/>
+    </div>
+    <button (click)="update()">Save</button>
   </div>
-  <div class="new-note">
-    <h2>New Note</h2>
-    <form (ngSubmit)="addNote()">
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" [(ngModel)]="newNote.title">
-      </div>
-      <div class="form-group">
-        <label for="body">Note</label>
-        <textarea id="body" name="body" [(ngModel)]="newNote.body"></textarea>
-      </div>
-      <button type="submit">Add Note</button>
-    </form>
-  </div>
+
+  <div *ngIf="errorMessage">{{errorMessage}}</div>
 </div>

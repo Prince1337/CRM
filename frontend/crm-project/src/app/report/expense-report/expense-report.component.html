@@ -1,18 +1,20 @@
 <div class="container">
     <h1>Expense Report</h1>
-    <div class="filter-container">
-      <div class="filter">
+    <div class="filter-container row">
+      <div class="filter col-md-3">
         <label for="date-range">Date Range:</label>
         <input type="date" id="date-range" name="date-range" [(ngModel)]="dateRange">
       </div>
-      <div class="filter">
+      <div class="filter col-md-3">
         <label for="category">Category:</label>
         <select id="category" name="category" [(ngModel)]="category">
           <option value="">All</option>
           <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
         </select>
       </div>
-      <button (click)="generateReport()">Generate Report</button>
+      <div class="col-md-3">
+        <button (click)="generateReport()">Generate Report</button>
+      </div>
     </div>
     <table>
       <thead>

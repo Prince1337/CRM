@@ -1,37 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/dataservice.service';
+
+import { Contact } from 'src/app/model/contact';
+import { Customer } from 'src/app/model/customer';
+import { DataService } from 'src/app/services/dataservice.service';
 
 @Component({
   selector: 'app-add-customer',
   templateUrl: './add-customer.component.html',
   styleUrls: ['./add-customer.component.scss']
 })
-export class AddCustomerComponent implements OnInit {
-  customer!: Customer;
 
-  constructor(private dataService: DataService) {}
+export class AddCustomerComponent {
+  customer: Customer = new Customer();
 
-  ngOnInit(): void {
-    this.customer = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      createdAt: new Date()
-    }
-  }
+  constructor(private dataService: DataService) { }
 
-  onSubmit(form: any): void {
-    this.customer.createdAt = new Date();
-    this.dataService.saveData([...this.dataService.getData("customers"), this.customer], "customers");
-    console.log(this.customer);
+  onSubmit(): void {
+    this.dataService.createCustomer(this.customer).subscribe((response: any) => {
+      console.log(this.customer + response);
+    });
   }
 }
 
-interface Customer {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  createdAt: Date;
-}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Project } from 'src/app/model/project';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-project-report',
@@ -6,9 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./project-report.component.scss']
 })
 export class ProjectReportComponent {
-  projects = [
-    { name: 'Project A', totalTasks: 20, completedTasks: 10, completionRate: 0.5 },
-    { name: 'Project B', totalTasks: 10, completedTasks: 8, completionRate: 0.8 },
-    { name: 'Project C', totalTasks: 5, completedTasks: 5, completionRate: 1 },
-  ];
+  projects: Project[] = [];
+
+  constructor(private projectService: ProjectService) { }
+
+  ngOnInit() {
+    this.getAllProjects();
+  }
+
+  getAllProjects(): void {
+    this.projectService.getAllProjects()
+      .subscribe(projects => this.projects = projects);
+  }
+
+  deleteProject(project: Project): void {
+    this.projects = this.projects.filter(p => p !== project);
+    this.projectService.deleteProjectById(project.id).subscribe();
+  }
 }

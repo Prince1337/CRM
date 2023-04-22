@@ -1,38 +1,36 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-header">
-          <h4 class="card-title m-0">Customers</h4>
+        <div routerLink="/list/customer" class="card h-100">
+          <div class="card-header">
+            <h4 class="card-title m-0">Customers</h4>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Customer Statistics</h2>
+            <p class="card-text">Total customers: 500</p>
+            <p class="card-text">Active customers: 400</p>
+            <p class="card-text">Inactive customers: 100</p>
+          </div>
         </div>
-        <div class="card-body">
-          <h2 class="card-title">Customer Statistics</h2>
-          <p class="card-text">Total customers: 500</p>
-          <p class="card-text">Active customers: 400</p>
-          <p class="card-text">Inactive customers: 100</p>
-        </div>
-      </div>
     </div>
     <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-header">
-
-          <h4 class="card-title m-0">Sales</h4>
+        <div routerLink="/sales/invoices" class="card h-100">
+          <div class="card-header">
+            <h4 class="card-title m-0">Sales</h4>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Sales Statistics</h2>
+            <p class="card-text">Total sales: 500</p>
+            <p class="card-text">Sales last month: 4</p>
+            <p class="card-text">Sales current month: 8</p>
+          </div>
         </div>
-        <div class="card-body">
-          <h2 class="card-title">Sales Statistics</h2>
-          <p class="card-text">Total sales: 500</p>
-          <p class="card-text">Sales last month: 4</p>
-          <p class="card-text">Sales current month: 8</p>
-
-        </div>
-      </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <div class="card h-100">
+      <div routerLink="/tasks/running" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">Tasks</h4>
         </div>
@@ -45,7 +43,7 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="card h-100">
+      <div routerLink="/list/contact" class="card h-100">
         <div class="card-header">
 
           <h4 class="card-title m-0">Contact</h4>
@@ -62,7 +60,7 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="card h-100">
+      <div routerLink="/accounting/expense/management" class="card h-100">
         <div class="card-header">
 
           <h4 class="card-title m-0">Accounting</h4>
@@ -76,9 +74,10 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="card h-100">
+      <div routerLink="/aufgaben" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">Reminders</h4>
+
         </div>
         <div class="card-body">
           <h5 class="card-title">Important Reminder</h5>
@@ -96,7 +95,7 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="card h-100">
+      <div routerLink="/report/project" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">Report</h4>
         </div>
@@ -113,7 +112,7 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="card h-100">
+      <div routerLink="/settings/general" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">Settings Information</h4>
         </div>
@@ -131,7 +130,7 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="card h-100">
+      <div routerLink="/user" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">User</h4>
         </div>
@@ -148,7 +147,7 @@
     </div>
 
     <div class="col-md-6">
-      <div class="card h-100">
+      <div routerLink="/documents" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">Document</h4>
         </div>
@@ -167,7 +166,7 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="card h-100">
+      <div routerLink="/calendar" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">Calendar</h4>
         </div>
@@ -183,7 +182,7 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="card h-100">
+      <div  routerLink="/notice-board" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">Notice Board</h4>
         </div>
@@ -205,8 +204,7 @@
   <div class="row">
     <div class="col-md-6">
 
-      <div class="card h-100">
-
+      <div routerLink="/message" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">Messages</h4>
         </div>
@@ -223,9 +221,7 @@
       </div>
     </div>
     <div class="col-md-6">
-
-      <div class="card h-100">
-
+      <div routerLink="/notes" class="card h-100">
         <div class="card-header">
           <h4 class="card-title m-0">Notes</h4>
         </div>
@@ -243,10 +239,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-
-    
   </div>
 </div>

@@ -19,7 +19,7 @@
           <td>{{ expense.amount | currency }}</td>
           <td>
             <i class="fa fa-edit"></i>
-            <i class="fa fa-trash" (click)="deleteExpenses(expense)"></i>
+            <i class="fa fa-trash" (click)="deleteExpense(expense.id)"></i>
           </td>
         </tr>
       </tbody>

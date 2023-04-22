@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { DataService } from 'src/app/dataservice.service';
+
+import { Expense } from 'src/app/model/expense';
+import { ExpenseService } from 'src/app/services/expense.service';
+
 
 @Component({
   selector: 'app-expense-management',
@@ -7,44 +10,33 @@ import { DataService } from 'src/app/dataservice.service';
   styleUrls: ['./expense-management.component.scss']
 })
 export class ExpenseManagementComponent {
-  expenses!: Expenses[];
 
-  constructor(private dataService: DataService) { }
+  expenses: Expense[] = [];
+
+  constructor(private expenseService: ExpenseService) { }
 
   ngOnInit(): void {
-    const expensesData = this.dataService.getData("expenses");
-    if (expensesData.length > 0) {
-      this.expenses = expensesData;
-    } else {
-      this.expenses = [
-        {
-          date: new Date(),
-          category: 'Food',
-          description: 'Expenses related to food and drinks',
-          amount: 100
-        },
-        {
-          date: new Date(),
-          category: 'Transportation',
-          description: 'Expenses related to transportation',
-          amount: 200
-        },
-        {
-          date: new Date(),
-          category: 'Entertainment',
-          description: 'Expenses related to entertainment activities',
-          amount: 300
-        }
-      ];
-      this.dataService.saveData(this.expenses, 'expenses');
-    }
-  } 
-
-  deleteExpenses(expenses: Expenses):void {
-    const index = this.expenses.findIndex(expense => expense.date === expenses.date);
-    this.expenses.splice(index, 1);
-    this.dataService.saveData(this.expenses, 'expenses');
+    this.loadExpenses();
   }
+
+  loadExpenses(): void {
+    this.expenseService.getAllExpenses().subscribe((expenses: Expense[]) => {
+      this.expenses = expenses;
+    });
+  }
+
+  saveExpense(expense: Expense): void {
+    this.expenseService.saveExpense(expense).subscribe((savedExpense: Expense) => {
+      this.expenses.push(savedExpense);
+    });
+  }
+
+  deleteExpense(id: number): void {
+    this.expenseService.deleteExpense(id).subscribe(() => {
+      this.expenses = this.expenses.filter(expense => expense.id !== id);
+    });
+  }
+  
 }
 
 interface Expenses {

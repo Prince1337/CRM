@@ -40,6 +40,9 @@ import { NoticeBoardComponent } from './notice-board/notice-board/notice-board.c
 import { MessageComponent } from './message/message/message.component';
 import { NotesComponent } from './notes/notes/notes.component';
 import { CalendarComponent } from './calendar/calendar/calendar.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -79,14 +82,17 @@ import { CalendarComponent } from './calendar/calendar/calendar.component';
     NoticeBoardComponent,
     MessageComponent,
     NotesComponent,
-    CalendarComponent
+    CalendarComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
